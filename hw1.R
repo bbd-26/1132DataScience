@@ -16,10 +16,11 @@ summary <- function(input_path, output_path) {
   
   # 建立結果資料框：第一行為標題，第二行為數值，欄位以逗號隔開
   result <- data.frame(set = file_name, weight = max_weight, height = max_height)
-  
-  # 將結果匯出到 output_path 指定的 CSV 檔案
-  write.csv(result, file = output_path, row.names = FALSE)
+
+  # 輸出結果到 CSV，不加上雙引號
+  write.csv(result, file = output_path, row.names = FALSE, quote = FALSE)
 }
+
 
 # 測試呼叫 (記得調整 input_path 與 output_path)
 # summary("./example/input1.csv", "./example/output1.csv")
